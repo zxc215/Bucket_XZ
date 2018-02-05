@@ -1,0 +1,70 @@
+{
+		"tables" : {
+				"load_meta" : {
+						"default_rule" : {
+								"name" : "load_meta_default",
+								"action" : {
+										"type" : "load_up",
+										"data" : {}
+								}
+						}
+				},
+				"table1" : {
+						"default_rule" : {
+								"name" : "table1_default",
+								"action" : {
+										"type" : "up_call",
+										"data" : {
+											"buffer_port" : {
+													"value" : "v0.3"
+											}
+										}
+								}
+						},
+						"rules" : [
+						{
+								"name" : "table1_1",
+								"match" : {
+										"Ftuple.tuples" : {
+												"value" : "3094851943608434007178739912",
+												"mask" : "0xffffff00ffffff00fff0fff0"
+									}
+								},
+								"action" : {
+										"type" : "_drop",
+										"data" : {}
+								}
+						}
+						]
+				},
+				"table2" : {
+						"default_rule" : {
+								"name" : "table2_default",
+								"action" : {
+										"type" : "_nop",
+										"data" : {}
+								}
+						},
+						"rules" : [
+						{
+								"name" : "table2_1",
+								"match" : {
+										"Ftuple.tuples" : {
+												"value" : "3094851943608434007178739912",
+												"mask" : "0xffffff00ffffff00fff0fff0"
+									}
+								},
+								"action" : {
+										"type" : "send_out",
+										"data" : {
+												"outport" : {
+														"value" : "v0.1"
+												}
+										}
+								}
+						}
+						]
+						
+				}
+		}
+}

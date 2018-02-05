@@ -1,0 +1,36 @@
+{
+		"tables" : {
+				"load_meta" : {
+						"default_rule" : {
+								"name" : "load_meta_default",
+								"action" : {
+										"type" : "load_up",
+										"data" : {}
+								}
+						}
+				},
+				"table1" : {
+						"default_rule" : {
+								"name" : "table1_default",
+								"action" : {
+										"type" : "up_call",
+										"data" : {
+												"buffer_port" : {
+														"value" : "v0.3"
+												}
+										}
+								}
+						}
+				},
+				"table2" : {
+						"default_rule" : {
+								"name" : "table2_default",
+								"action" : {
+										"type" : "_nop",
+										"data" : {}
+								}
+						}
+						
+				}
+		}
+}
